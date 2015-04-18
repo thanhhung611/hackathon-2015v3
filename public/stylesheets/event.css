@@ -1,0 +1,48 @@
+
+.content {
+  width: 300px;
+  height: 300px;
+  background-color: #B8B8B8;
+  border-radius: 50%;
+  text-align: center;
+  padding: 40px;
+}
+
+.event-container {
+  width: 45%;
+  height: auto;
+  position: relative;
+  display: inline-block;
+}
+
+.control {
+  width: auto;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  min-width: 40px;
+  font-size: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  background-color: #b8b8b8;
+  text-align: center;
+}
+
+img{
+  width: 100px;
+  height: 100px;
+}
+
+.img-container {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: auto 0;
+}
