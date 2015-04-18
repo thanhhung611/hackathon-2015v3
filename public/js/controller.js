@@ -7,8 +7,8 @@ angular.module('myApp.controller',[])
 	 })
 })
 
-.controller('postCtrl', function($scope){
+/*.controller('postCtrl', function($scope){
 	$scope.submit = {};
 	console.log($scope.submit);
 	
-})
+})*/
