@@ -1,4 +1,4 @@
-<html> 
+<html ng-app="myApp"> 
 	<head>
   <!-- title and meta -->
   <meta charset="utf-8">
@@ -18,7 +18,18 @@
   <script src="templates"></script>
   <script src="server.js"></script>
   <script src="style.css"></script>
-  </head>
-
+  <script src="js/app.js"> </script>  
+</head>
+<body>
+  <div ng-controller="StudentCtrl">
+    <tbody>
+      <td> {{content.id}}</td>
+    </tbody>
+    <form>
+        <textarea name="medication" rows="3" col="4"></textarea>
+    </form>
+    <input type="button" value="Save" ng-click="saveContact()">
+  </div>
+</body>
 
 </html>
