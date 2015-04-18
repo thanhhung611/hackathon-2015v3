@@ -35,12 +35,9 @@ router.post('/newevent', function(req,res){
             {
                 console.log('Saved :' + data);
                 res.writeHead(200, {'Content-Type': 'application/json'});
-                res.json(data);
             }
         });
-
-
-
+    res.render("index.html");
     res.end();
 
 });
@@ -58,7 +55,6 @@ router.get('/getEvent',function(req,res){
         }
     });
     res.end();
-
 });
 
 
