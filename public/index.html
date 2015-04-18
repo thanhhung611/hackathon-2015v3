@@ -22,11 +22,11 @@
 </head>
 <body ng-app="myApp">
   <div ng-controller="StudentCtrl">
-   <ul>
-    <li ng-repeat ="content in contents"> 
-        <li>{{content.username}}</li>
-         <li> {{content.email}}</li> 
-    </li>
+   <ul ng-repeat ="student in students">
+     
+        <li> {{student.username}} </li>
+         <li> {{student.email}} </li> 
+    
 
    </ul>
     <nav>
