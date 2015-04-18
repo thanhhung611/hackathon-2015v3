@@ -13,7 +13,7 @@ var Event = db.model('Event',schema);
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Expressssssss' });
+  res.render('index.html', { title: 'Expressssssss' });
 });
 /* GET Userlist page. */
 router.get('/userpost', function(req, res) {
@@ -23,8 +23,8 @@ router.get('/userpost', function(req, res) {
 });
 
 router.post('/newevent', function(req,res){
-  var content;
-      var input = JSON.parse(req.body);
+  //var content;
+      var input = req.body;
     console.log(input);
       var time = new Date();
       var newEvent = new Event({content: input.content.toString(), image: input.image,date:time });
@@ -39,7 +39,7 @@ router.post('/newevent', function(req,res){
       });
 
     res.end();
-    
+
 });
 
 router.get('/getEvent',function(req,res){
