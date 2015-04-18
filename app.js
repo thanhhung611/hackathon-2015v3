@@ -45,6 +45,13 @@ var db = mongoose.connect('mongodb://admin:admin@ds061641.mongolab.com:61641/hac
 var schema = mongoose.Schema({content:'string',image:'string',date:'date'});
 var Event = db.model('Event',schema);
 
+var time = new Date();
+var newEvent = new Event({content: "hihi", image: 'path',date:time });
+
+newEvent.save(function(err,data){
+    if(err) console.log(err);
+    else console.log('Saved :' + data);
+});
 //// End database handlers
 
 
