@@ -1,10 +1,18 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
-//var app = require('app');
+var mongoose = require('mongoose');
+
+
+// Database Handlers
+var db = mongoose.connect('mongodb://admin:admin@ds061641.mongolab.com:61641/hackathon');
+
+var schema = mongoose.Schema({content:'string',image:'string',date:'date'});
+var Event = db.model('Event',schema);
+
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   res.render('index', { title: 'Expressssssss' });
 });
 /* GET Userlist page. */
@@ -19,13 +27,22 @@ router.post('/newevent', function(req,res){
   req.on('data',function(data){
       var input = JSON.parse(data);
       var time = new Date();
-      var newEvent = new Event({content: "hihi", image: 'path',date:time });
+      var newEvent = new Event({content: input.content.toString(), image: input.image,date:time });
 
       newEvent.save(function(err,data){
           if(err) console.log(err);
           else console.log('Saved :' + data);
       });
   });
+});
+
+router.get('/getEvent',function(req,res){
+    Event.find({},function(err,docs){
+        if(err) console.log(err);
+        else {
+
+        }
+    });
 });
 
 

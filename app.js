@@ -25,10 +25,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname + "/public")); // load html from public folder
 app.use(bodyParser.json());
-app.use(function(req,res,next){
-    req.db = db;
-    next();
-});
+
 app.use('/', routes);
 app.use('/users', users);
 
@@ -39,19 +36,23 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// Database Handlers
-var db = mongoose.connect('mongodb://admin:admin@ds061641.mongolab.com:61641/hackathon');
 
-var schema = mongoose.Schema({content:'string',image:'string',date:'date'});
-var Event = db.model('Event',schema);
 
-var time = new Date();
+/*var time = new Date();
 var newEvent = new Event({content: "hihi", image: 'path',date:time });
 
 newEvent.save(function(err,data){
     if(err) console.log(err);
     else console.log('Saved :' + data);
 });
+
+Event.find({},function(err, data){
+    if(err){
+        console.log(err);
+    }else{
+        console.log(data);
+    }
+});*/
 //// End database handlers
 
 
