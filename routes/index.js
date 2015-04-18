@@ -10,7 +10,6 @@ var db = mongoose.connect('mongodb://admin:admin@ds061641.mongolab.com:61641/hac
 var schema = mongoose.Schema({content:'string',image:'string',date:'date'});
 var Event = db.model('Event',schema);
 
-
 /* GET home page. */
 router.get('/', function(req, res) {
   res.render('index.html', { title: 'Expressssssss' });
@@ -28,23 +27,7 @@ router.get('/userpost', function(req, res) {
     });
 });
 
-router.post('/newevent', function(req,res){
 
-  var postData = req.body;
-  var datetime = new Date();
-  console.log(postData);
-  var newEvent = new Event({content : postData.content,image:'',date:datetime  });
-
-  newEvent.save(function(err,data){
-    if(!err){
-      console.log(data);
-    } else {
-      console.log(err);
-    }
-  });
-
-  res.end();
-});
 
 router.get('/getEvent',function(req,res){
 
@@ -62,5 +45,22 @@ router.get('/getEvent',function(req,res){
 
 });
 
+router.post('/newevent', function(req,res){
+  console.log('GO to /newevent');
+
+  var postData = req.body;
+  var datetime = new Date();
+  console.log('This is post :' + postData);
+  var newEvent = new Event({content : "18:51",image:'img.jpeg',date:datetime  });
+
+  newEvent.save(function(err,data){
+    if(!err){
+      console.log(data);
+    } else {
+      console.log(err);
+    }
+  });
+
+});
 
 module.exports = router;

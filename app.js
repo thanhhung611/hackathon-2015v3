@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
+
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -35,26 +35,6 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
-
-
-/*var time = new Date();
-var newEvent = new Event({content: "hihi", image: 'path',date:time });
-
-newEvent.save(function(err,data){
-    if(err) console.log(err);
-    else console.log('Saved :' + data);
-});
-
-Event.find({},function(err, data){
-    if(err){
-        console.log(err);
-    }else{
-        console.log(data);
-    }
-});*/
-//// End database handlers
-
 
 
 // error handlers
