@@ -46,9 +46,11 @@ router.get('/getEvent',function(req,res){
     Event.find({},function(err,docs){
         if(err) console.log(err);
         else {
-        console.log(docs);
+        res.json(docs);
         }
     });
+
+    res.end();
 });
 
 
