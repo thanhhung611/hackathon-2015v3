@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var db = mongoose.connect('mongodb://admin:admin@ds061641.mongolab.com:61641/hackathon');
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -38,6 +38,16 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
+
+// Database Handlers
+var db = mongoose.connect('mongodb://admin:admin@ds061641.mongolab.com:61641/hackathon');
+
+var schema = mongoose.Schema({content:'string',image:'string',date:'date'});
+var Event = db.model('Event',schema);
+
+//// End database handlers
+
+
 
 // error handlers
 
