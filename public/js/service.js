@@ -1,2 +1,1 @@
-angular.module('content.service',[])
-	
+angular.module('myApp.service',[])
