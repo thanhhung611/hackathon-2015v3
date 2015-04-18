@@ -18,13 +18,32 @@ router.get('/', function(req, res) {
 /* GET Userlist page. */
 router.get('/userpost', function(req, res) {
     //var db = req.db;
-    var collection = [{ "username" : "testuser2", "email" : "testuser2@testdomain.com" }, { "username" : "testuser3", "email" : "testuser3@testdomain.com" }]
-    res.json(collection);
+    //var collection = [{ "username" : "testuser2", "email" : "testuser2@testdomain.com" }, { "username" : "testuser3", "email" : "testuser3@testdomain.com" }]
+    Event.find(function(err,events){
+      if(!err){
+        res.json(events);
+      } else {
+        console.log(err);
+      }
+    });
 });
 
 
 router.post('/newevent', function(req,res){
+  var postData = req.body;
+  var datetime = new Date();
+  console.log(postData);
+  var newEvent = new Event({content : postData.content,image:'',date:datetime  });
 
+  newEvent.save(function(err,data){
+    if(!err){
+      console.log(data);
+    } else {
+      console.log(err);
+    }
+  });
+
+  res.end();
 });
 
 router.get('/getEvent',function(req,res){
