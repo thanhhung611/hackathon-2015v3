@@ -26,10 +26,10 @@
   <div class="logo"></div>
   <div class="post">
       <form>
-    <textarea row="8" class="form-control" placeholder="your message"></textarea>
+    <textarea row="8" class="form-control" placeholder="your message" ng-model="submit.content"></textarea>
     <label>Upload</label>
-    <input type="file">
-    <button type="submit">Pac Talk!</button>
+    <input type="file" ng-model="submit.image">
+    <button  ng-click="addData()">Pac Talk!</button>
   </form>
       </div>
 </div>
