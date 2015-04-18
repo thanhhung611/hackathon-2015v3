@@ -7,4 +7,16 @@ angular.module('myApp.controller',[])
 	 })
 })
 
+.controller('postCtrl', function($http,$scope, reFresh){
+	$scope.submit = {};
+	console.log(reFresh);
+
+	$scope.addData = function(){
+		$http.post('/newevent', $scope.submit).success(function(data){
+			console.log(data);
+
+		})
+	}
+	
+})
 
