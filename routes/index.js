@@ -28,8 +28,8 @@ router.get('/userpost', function(req, res) {
     });
 });
 
-
 router.post('/newevent', function(req,res){
+<<<<<<< HEAD
   var postData = req.body;
   var datetime = new Date();
   console.log(postData);
@@ -44,10 +44,45 @@ router.post('/newevent', function(req,res){
   });
 
   res.end();
+=======
+  //var content;
+    express.bodyParser();
+
+        var time = new Date();
+        var newEvent = new Event({content: req.body.content, image: req.body.image,date:time });
+
+        newEvent.save(function(err,data){
+            if(err) console.log(err);
+            else
+            {
+                console.log('Saved :' + data);
+                res.writeHead(200, {'Content-Type': 'application/json'});
+                res.json(data);
+            }
+        });
+
+
+
+    res.end();
+
+>>>>>>> 3a2bd9b73f38c8fb7c994c9d0511b6d43bfc52c6
 });
 
 router.get('/getEvent',function(req,res){
 
+    Event.find({},function(err,docs){
+        if(err){
+            console.log(err);
+        }
+        else {
+            res.writeHead(200, {'Content-Type': 'application/json'});
+            res.write(docs);
+
+        }
+    });
+    res.end();
+
 });
+
 
 module.exports = router;
