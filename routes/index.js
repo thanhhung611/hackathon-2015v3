@@ -24,33 +24,41 @@ router.get('/userpost', function(req, res) {
 
 router.post('/newevent', function(req,res){
   //var content;
-      var input = req.body;
-    console.log(input);
-      var time = new Date();
-      var newEvent = new Event({content: input.content.toString(), image: input.image,date:time });
+    express.bodyParser();
 
-      newEvent.save(function(err,data){
-          if(err) console.log(err);
-          else
-          {
-              console.log('Saved :' + data);
-              res.json(data);
-          }
-      });
+        var time = new Date();
+        var newEvent = new Event({content: req.body.content, image: req.body.image,date:time });
+
+        newEvent.save(function(err,data){
+            if(err) console.log(err);
+            else
+            {
+                console.log('Saved :' + data);
+                res.writeHead(200, {'Content-Type': 'application/json'});
+                res.json(data);
+            }
+        });
+
+
 
     res.end();
 
 });
 
 router.get('/getEvent',function(req,res){
+
     Event.find({},function(err,docs){
-        if(err) console.log(err);
+        if(err){
+            console.log(err);
+        }
         else {
-        res.json(docs);
+            res.writeHead(200, {'Content-Type': 'application/json'});
+            res.write(docs);
+
         }
     });
-
     res.end();
+
 });
 
 
