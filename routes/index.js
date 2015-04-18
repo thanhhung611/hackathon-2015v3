@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
+var app = require('app');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Expressssssss' });
@@ -15,7 +17,14 @@ router.get('/userpost', function(req, res) {
 router.post('/newevent', function(req,res){
   var content;
   req.on('data',function(data){
-      content = JSON.parse(data);
+      var input = JSON.parse(data);
+      var time = new Date();
+      var newEvent = new Event({content: input.content.toString(), image: '',date:time });
+
+      newEvent.save(function(err,data){
+          if(err) console.log(err);
+          else console.log('Saved :' + data);
+      });
   });
 });
 
