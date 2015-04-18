@@ -23,6 +23,21 @@ router.get('/userpost', function(req, res) {
 });
 
 router.post('/newevent', function(req,res){
+<<<<<<< HEAD
+  var content;
+      var input = JSON.parse(req.body);
+    console.log(input);
+      var time = new Date();
+      var newEvent = new Event({content: input.content.toString(), image: input.image,date:time });
+      newEvent.save(function(err,data){
+          if(err) console.log(err);
+          else
+          {
+              console.log('Saved :' + data);
+              res.json(data);
+          }
+      });
+=======
   //var content;
     express.bodyParser();
 
@@ -37,7 +52,14 @@ router.post('/newevent', function(req,res){
                 res.writeHead(200, {'Content-Type': 'application/json'});
             }
         });
+<<<<<<< HEAD
     res.render("index.html");
+=======
+
+
+>>>>>>> 59f82bc2226d4f106b268c6da3b2768e1396a0e0
+
+>>>>>>> cb113a220ff1afbc8ff93d048c3d11eb5caff4d9
     res.end();
 
 });
