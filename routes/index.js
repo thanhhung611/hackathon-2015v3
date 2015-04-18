@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var fs = require('fs');
-var app = require('app');
+//var app = require('app');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -19,7 +19,7 @@ router.post('/newevent', function(req,res){
   req.on('data',function(data){
       var input = JSON.parse(data);
       var time = new Date();
-      var newEvent = new Event({content: input.content.toString(), image: '',date:time });
+      var newEvent = new Event({content: "hihi", image: 'path',date:time });
 
       newEvent.save(function(err,data){
           if(err) console.log(err);
