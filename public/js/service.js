@@ -1,1 +1,2 @@
-var module = angular.module('myApp',[]);
+angular.module('content.service',[])
+	
