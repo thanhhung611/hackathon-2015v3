@@ -4,8 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongojs =require('mongojs');
-var db = mongojs('mongodb://admin:admin@ds061641.mongolab.com:61641/hackathon', ['content']);
+var mongoose = require('mongoose');
+var db = mongoose.connect('mongodb://admin:admin@ds061641.mongolab.com:61641/hackathon');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -25,6 +25,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname + "/public")); // load html from public folder
 app.use(bodyParser.json());
+app.use(function(req,res,next){
+    req.db = db;
+    next();
+});
 app.use('/', routes);
 app.use('/users', users);
 
