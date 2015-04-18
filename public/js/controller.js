@@ -6,3 +6,9 @@ angular.module('myApp.controller',[])
 	 	console.log(response);
 	 })
 })
+
+.controller('postCtrl', function($scope){
+	$scope.submit = {};
+	console.log($scope.submit);
+	
+})
