@@ -38,9 +38,8 @@ router.post('/newevent', function(req,res){
           }
       });
 
-
-
-
+    res.end();
+    
 });
 
 router.get('/getEvent',function(req,res){
