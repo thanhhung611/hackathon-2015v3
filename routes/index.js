@@ -28,7 +28,6 @@ router.post('/newevent', function(req,res){
     console.log(input);
       var time = new Date();
       var newEvent = new Event({content: input.content.toString(), image: input.image,date:time });
-
       newEvent.save(function(err,data){
           if(err) console.log(err);
           else
@@ -39,7 +38,7 @@ router.post('/newevent', function(req,res){
       });
 
     res.end();
-    
+
 });
 
 router.get('/getEvent',function(req,res){
