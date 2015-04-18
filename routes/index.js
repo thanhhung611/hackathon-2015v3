@@ -24,23 +24,30 @@ router.get('/userpost', function(req, res) {
 
 router.post('/newevent', function(req,res){
   var content;
-  req.on('data',function(data){
-      var input = JSON.parse(data);
+      var input = JSON.parse(req.body);
+    console.log(input);
       var time = new Date();
       var newEvent = new Event({content: input.content.toString(), image: input.image,date:time });
 
       newEvent.save(function(err,data){
           if(err) console.log(err);
-          else console.log('Saved :' + data);
+          else
+          {
+              console.log('Saved :' + data);
+              res.json(data);
+          }
       });
-  });
+
+
+
+
 });
 
 router.get('/getEvent',function(req,res){
     Event.find({},function(err,docs){
         if(err) console.log(err);
         else {
-
+        console.log(docs);
         }
     });
 });
