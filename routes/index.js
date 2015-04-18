@@ -22,6 +22,7 @@ router.get('/userpost', function(req, res) {
     res.json(collection);
 });
 
+
 router.post('/newevent', function(req,res){
 
 });
@@ -29,6 +30,5 @@ router.post('/newevent', function(req,res){
 router.get('/getEvent',function(req,res){
 
 });
-
 
 module.exports = router;
