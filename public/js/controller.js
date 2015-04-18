@@ -12,7 +12,11 @@ angular.module('myApp.controller',[])
 	$scope.submit = {};
 
 $scope.addData = function(){
-		$http.post('/newevent', $scope.submit).success(function(data){
+	var config = {headers:  {
+        'content-type': 'json'
+    }
+};
+		$http.post('/newevent', $scope.submit, config).success(function(data){
 		console.log(data);
 	})
 };
