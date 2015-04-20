@@ -1,29 +1,29 @@
-
-.content {
-  width: 300px;
-  height: 300px;
-  background-color: #B8B8B8;
+.event-content.btn {
+  width: 310px;
+  height: 310px;
+  background: url(../img/Pacman1.png) no-repeat;
+  background-size: cover;
   border-radius: 50%;
+  border-color: #4c341b;
   text-align: center;
   padding: 40px;
 }
 
 .event-container {
-  width: 45%;
+  width: 500px;
   height: auto;
   position: relative;
   display: inline-block;
 }
 
-.control {
-  width: auto;
+.event-control {
   position: absolute;
   right: 0;
-  top: 50%;
+  top: 30%;
   transform: translateY(-50%);
 }
 
-.btn {
+.event-control .btn {
   display: inline-block;
   padding: 10px;
   margin: 10px;
@@ -31,25 +31,31 @@
   font-size: 40px;
   line-height: 40px;
   border-radius: 50%;
-  background-color: #b8b8b8;
+  background-color: #00b593;
   text-align: center;
+  color: #fff;
+  border-color: #003024;
 }
 
-.content img{
-  width: 200px;
-  height: 200px;
-  transform: translate(-25px,-25px);
-}
-
-.img-container {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin: 0 auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
+.event-img-container {
+  width: 100px;
+  height: 100px;
   overflow: hidden;
+  position: relative;
+  border-radius: 50%;
+  margin: 0px 0 0 80px;
 }
 
-.text {
+.event-img-container img {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.event-text {
+  font-size: 2em;
+  margin-top: 66px;
 }

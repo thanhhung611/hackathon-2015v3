@@ -1,5 +1,6 @@
-<html >
-	<head>
+<html>
+
+<head>
   <!-- title and meta -->
   <meta charset="utf-8">
   <meta content="width=device-width,initial-scale=1.0" name="viewport">
@@ -7,7 +8,10 @@
 
   <title>Hackathon</title>
 
-  
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="dist/bootstrap-3.3.4-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/index.css">
 
   <!-- js -->
   <script src="dist/angular.min.js"></script>
@@ -17,20 +21,22 @@
   <script src="dist/jquery-2.1.1.min"></script>
   <script src="js/service.js"></script>
   <script src="js/directive.js"></script>
-   <script src="js/controller.js"></script>
-   
-  <script src="js/app.js"> </script>
+  <script src="js/controller.js"></script>
+
+  <script src="js/app.js">
+  </script>
 </head>
+
 <body ng-app="myApp">
   <div ng-controller="StudentCtrl">
 
-   <ul ng-repeat ="post in posts">
-     
-        <li>  {{post.content}} </li>
-         <li> {{post.image}} </li> 
-    
+    <ul ng-repeat="post in posts">
 
-   </ul>
+      <li> {{post.content}} </li>
+      <li> {{post.image}} </li>
+
+
+    </ul>
     <nav>
       <div class="logo"></div>
       <div class="btn">Topic</div>
@@ -43,11 +49,11 @@
       </div>
 
       <div class="content">
-        <div class="img-container"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSWUpF2KU2YA2VKTQeM28vOOkilf9_IkmwA6cKkG7Kt0jn_mxRC"></div>
+        <div class="img-container"><img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSWUpF2KU2YA2VKTQeM28vOOkilf9_IkmwA6cKkG7Kt0jn_mxRC">
+        </div>
         <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
-  </div>
+      </div>
     </div>
 </body>
 
-</html
->
+</html>
