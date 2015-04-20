@@ -4,7 +4,7 @@
   background: url(../img/Pacman1.png) no-repeat;
   background-size: cover;
   border-radius: 50%;
-  border-color: #4c341b;
+  box-shadow: 0 5px 0 #4c341b;
   text-align: center;
   padding: 40px;
 }
@@ -26,7 +26,7 @@
 .event-control .btn {
   display: inline-block;
   padding: 10px;
-  margin: 10px;
+  margin: 0 10px;
   min-width: 40px;
   font-size: 40px;
   line-height: 40px;
@@ -34,7 +34,7 @@
   background-color: #00b593;
   text-align: center;
   color: #fff;
-  border-color: #003024;
+  box-shadow: 0 5px 0 #003024;
 }
 
 .event-img-container {
