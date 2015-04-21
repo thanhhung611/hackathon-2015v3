@@ -6,20 +6,19 @@
 
 body {
   font: 14px "Lucida Grande", cursive;
+  background-color: #0e0e0e;
 }
 
-a,
 .btn {
   text-decoration: none;
+  position: relative;
 }
 
-a,
 .btn:hover {
   cursor: pointer;
 }
 
-a,
 .btn:active {
-  box-shadow: none;
-  margin-top: 5px;
+  box-shadow: none !important;
+  top: 5px;
 }
